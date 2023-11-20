@@ -18,12 +18,12 @@ btnStart.addEventListener('click', () => {
   timerColor = setInterval(() => {
     bodyColor.style.backgroundColor = getRandomHexColor();
   }, 1000);
-  Notiflix.Notify.success('Start');
+ return  Notiflix.Notify.success('Start');
 });
 
 btnStop.addEventListener('click', () => {
   clearInterval(timerColor);
   btnStart.removeAttribute('disabled');
   btnStop.setAttribute('disabled', true);
-  Notiflix.Notify.failure('Stop');
+  return Notiflix.Notify.failure('Stop');
 });
