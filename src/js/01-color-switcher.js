@@ -9,6 +9,8 @@ const btnStop = document.querySelector('button[data-stop]');
 btnStart.classList.add('btn-color-js');
 btnStop.classList.add('btn-color-js');
 
+let timerColor = null;
+
 btnStart.addEventListener('click', () => {
   btnStart.setAttribute('disabled', true);
   btnStop.removeAttribute('disabled');
