@@ -1,3 +1,6 @@
+import Notiflix from 'notiflix';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
     .toString(16)
@@ -17,10 +20,12 @@ btnStart.addEventListener('click', () => {
   timerColor = setInterval(() => {
     bodyColor.style.backgroundColor = getRandomHexColor();
   }, 1000);
+  Notiflix.Notify.success('Start')
 });
 
 btnStop.addEventListener('click', () => {
   clearInterval(timerColor);
   btnStart.removeAttribute('disabled');
   btnStop.setAttribute('disabled', true);
+  Notiflix.Notify.failure('Stop');
 });
